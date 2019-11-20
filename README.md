@@ -1,6 +1,8 @@
 # Android-CreateYourBomb
 This Android project shows a way to pass Java objects between activities using Intents.
 
+Notice that to pass the object in this app, the object must implements the interface Serializable.
+
 ## User Interface controls used:
     ConstraintLayout
     TextView
