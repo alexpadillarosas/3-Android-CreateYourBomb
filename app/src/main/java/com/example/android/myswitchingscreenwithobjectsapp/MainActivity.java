@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         Bomb bomb = new Bomb();
         TextView bombNameTextView = findViewById(R.id.bombNameTextView);
 
-        if(bombNameTextView.getText().toString().isEmpty()) {
+        if(bombNameTextView.getText().toString().trim().isEmpty()) {
             //using a Snackbar, similar to Toast it shows a message to the user, but the former one can be dismissed by the user.
             //it's recommended to use Snackbar.
-            Snackbar.make(view, "Please fill in the name", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view, "Please name your bomb", Snackbar.LENGTH_SHORT).show();
             return;
         }
 
