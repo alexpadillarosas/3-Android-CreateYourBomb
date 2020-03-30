@@ -50,7 +50,7 @@
         android:background="#FFEB3B"
         android:clickable="true"
         android:onClick="selectBomb"
-        android:src="@drawable/bomb_nuclear"
+        android:src="@drawable/nuclear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

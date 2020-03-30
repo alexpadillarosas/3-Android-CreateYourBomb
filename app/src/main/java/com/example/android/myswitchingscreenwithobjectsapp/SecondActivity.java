@@ -34,7 +34,7 @@ public class SecondActivity extends AppCompatActivity {
                 bomb.setResId(R.drawable.dynamite);
                 break;
             case R.id.bomb3imageView:
-                bomb.setResId(R.drawable.bomb_nuclear);
+                bomb.setResId(R.drawable.nuclear);
                 break;
         }
 
