@@ -24,3 +24,6 @@ At this point in the subject, there is a room for improvement. The current proje
 
 ## First Activity ( bomb type has been selected ) you can now destroy the world
 ![Screenshot_1574210017](https://user-images.githubusercontent.com/4823319/69225479-98093780-0bd2-11ea-9bd7-f3cca6be2353.png)
+
+## Update
+A button to select the name from the phone contacts database was added.
