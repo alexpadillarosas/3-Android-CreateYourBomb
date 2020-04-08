@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
                 String name = retrieveContactName(contact);
                 bombNameTextView.setText(name);
                 retrieveContactNumber(contact);
+                // find more info here:
                 // https://developer.android.com/reference/android/content/Intent#ACTION_VIEW
             }
         } else {
             Toast.makeText(this, "wrong request code come back? requestCode: " + requestCode, Toast.LENGTH_SHORT).show();
         }
-
 
     }
 
