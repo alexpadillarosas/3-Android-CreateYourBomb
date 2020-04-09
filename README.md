@@ -1,7 +1,7 @@
 # Android-CreateYourBomb
 This Android project demonstrate: 
 * How to pass Java objects between activities using Intents.
-* How to call buidt-in activities from the Android OS (contacts).
+* How to call built-in activities from the Android OS (contacts).
 
 Notice that to pass the object in this app, the object must implement the interface Serializable.
 
