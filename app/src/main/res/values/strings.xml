@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Build Your Own Bomb :) </string>
+
+    <string name="action_ok">OK</string>
+    <string name="permission_alert_dialog_title">Requesting Contacts permission</string>
+    <string name="permission_dialog_message">The app will now request your permission to read contacts.</string>
 </resources>

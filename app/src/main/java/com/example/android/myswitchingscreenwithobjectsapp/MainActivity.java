@@ -1,7 +1,11 @@
 package com.example.android.myswitchingscreenwithobjectsapp;
 
+import android.Manifest;
+import android.app.AlertDialog;
 import android.content.ContentUris;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,6 +13,8 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +30,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 
+import static com.example.android.myswitchingscreenwithobjectsapp.Constants.READ_CONTACTS_PERMISSION_CODE;
 import static com.example.android.myswitchingscreenwithobjectsapp.Constants.REQUEST_CODE_PICK_CONTACTS;
 import static com.example.android.myswitchingscreenwithobjectsapp.Constants.REQUEST_CODE_SECOND_SCREEN;
 
@@ -65,10 +72,14 @@ public class MainActivity extends AppCompatActivity {
         contactImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI), REQUEST_CODE_PICK_CONTACTS);
+                if(!hasReadContactsPermission()){
+                    showRequestPermissionsInfoAlertDialog();
+                }else
+                    startActivityForResult(new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI), REQUEST_CODE_PICK_CONTACTS);
             }
         });
     }
+
 
     public void buildBomb(View view) {
         //build a bomb, ask to build a new activity(with screen) and send the bomb
@@ -124,6 +135,38 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "wrong request code come back? requestCode: " + requestCode, Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+
+    private boolean hasReadContactsPermission() {
+        return ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
+
+    }
+
+    private void showRequestPermissionsInfoAlertDialog() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.READ_CONTACTS)) {
+            // Show an explanation to the user *asynchronously* -- don't block
+            // this thread waiting for the user's response! After the user
+            // sees the explanation, try again to request the permission.
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.permission_alert_dialog_title);
+            builder.setMessage(R.string.permission_dialog_message);
+            builder.setPositiveButton(R.string.action_ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    requestReadContactsPermission();
+                }
+            });
+            builder.show();
+        }else{
+            // No explanation needed; request the permission
+            requestReadContactsPermission();
+        }
+    }
+
+    private void requestReadContactsPermission() {
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_CONTACTS}, READ_CONTACTS_PERMISSION_CODE);
     }
 
     private String retrieveContactName(Uri uriContact) {
