@@ -27,6 +27,8 @@ At this point in the subject, there is a room for improvement. The current proje
 
 ## Update
 A button to select the name from the phone contacts database was added.
+### Important : if you are testing it on an emulator, add contacts first:
+Jim Morrison and Lady Gaga were previously added as contacts in the emulator, so we can select one.
 
 ## First Activity Showing the contacts button
 ![Screenshot_1586396242](https://user-images.githubusercontent.com/4823319/78849373-ac51b200-7a57-11ea-9d79-1cc56991ee2b.png)
