@@ -1,5 +1,7 @@
 # Android-CreateYourBomb
-This Android project shows a way to pass Java objects between activities using Intents.
+This Android project demonstrate: 
+* How to pass Java objects between activities using Intents.
+* How to call buidt-in activities from the Android OS (contacts).
 
 Notice that to pass the object in this app, the object must implement the interface Serializable.
 
@@ -9,7 +11,7 @@ Notice that to pass the object in this app, the object must implement the interf
     EditText
     ImageView
     Switch
-    
+    ImageButton
 
 At this point in the subject, there is a room for improvement. The current project has a lot of warnings we will fix in the following classes.
 
