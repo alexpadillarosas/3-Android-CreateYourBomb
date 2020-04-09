@@ -27,3 +27,13 @@ At this point in the subject, there is a room for improvement. The current proje
 
 ## Update
 A button to select the name from the phone contacts database was added.
+
+## First Activity Showing the contacts button
+![Screenshot_1586396242](https://user-images.githubusercontent.com/4823319/78849373-ac51b200-7a57-11ea-9d79-1cc56991ee2b.png)
+
+## Contacts Activity (select your contact)
+![Screenshot_1586396666](https://user-images.githubusercontent.com/4823319/78849378-afe53900-7a57-11ea-9901-65f57717f447.png)
+
+## Frist Activity with the name of the selected contact
+![Screenshot_1586396672](https://user-images.githubusercontent.com/4823319/78849390-b4a9ed00-7a57-11ea-88ec-893a22b9ac75.png)
+
